@@ -26,3 +26,16 @@ def delete_data(request,id):
         pi.delete()
         return redirect('/')
     return render(request,'addandshow.html')
+def update_data(request,id):
+    if request.method=='POST':
+        pi=user.objects.get(pk=id)
+        fm=student_registration(request.POST,instance=pi)
+        if fm.is_valid():
+           fm.save()
+        fm=student_registration()
+         
+    else:
+        pi=user.objects.get(pk=id)
+        fm=student_registration(instance=pi)
+            
+    return render(request,'update.html',{'form':fm})

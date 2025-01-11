@@ -7,5 +7,5 @@ class student_registration(forms.ModelForm):
         widgets={
             'name':forms.TextInput(attrs={'class':'form-control required'}),
             'email':forms.TextInput(attrs={'class':'form-control required'}),
-            'password':forms.PasswordInput(attrs={'class':'form-control required'}),
-        }
+            'password':forms.PasswordInput(render_value=True,attrs={'class':'form-control required'}),
+            }
