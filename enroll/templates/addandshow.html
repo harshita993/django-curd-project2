@@ -40,11 +40,17 @@
                 </tr>
                 {% endfor %}
             </tbody>
-          </table>
+        </table>
           
         
         {% else %}
         <h4 class='text-center alert alert-warning'>no data</h4>
+        {% endif %}
+        </br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class='alert alert-success text-center'>{{ message}}</div>
+            {% endfor %}
         {% endif %}
     </div> 
 </div>
